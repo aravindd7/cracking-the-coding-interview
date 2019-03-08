@@ -2,7 +2,7 @@
 🧨 My JavaScript solutions (and tests!) to CTCI practice problems
 
 ## Table of Contents
-- Unit 1
+- Unit 1 _(In progress)_
   - [Solutions](https://github.com/jameslearns/cracking-the-coding-interview/blob/master/Unit-1.js)
   - [Tests](https://github.com/jameslearns/cracking-the-coding-interview/blob/master/_tests__/unit1.test.js)
 - Unit 2
