@@ -127,11 +127,6 @@ const Unit1 = {
     const n = m.length;
     for (let i = 0; i < Math.floor(n / 2); i++) {
       for (let j = 0; j < n - (2 * i) - 1; j++) {
-
-        let a = m[i][i + j];
-        let b = m[i + j][n - 1 - i];
-        let c = m[n - 1 - i][n - 1 - i - j];
-        let d = m[n - 1 - i - j][i];
         
         let temp = m[i + j][n - 1 - i];
         m[i + j][n - 1 - i] = m[i][i + j];
