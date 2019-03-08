@@ -118,7 +118,57 @@ describe('Toy Problem Tests', () => {
         const str = '';
         expect(unit1.palindromePermutation(str)).toEqual(false);
       });
-
     });
+
+    describe('1.5 - One Away', () => {
+      test('1. Should return true if the strings are 1 edit away', () => {
+        const str1 = 'test';
+        const str2 = 'tests';
+        expect(unit1.oneAway(str1, str2)).toEqual(true)
+      });
+
+      test('2. Should return true if the strings are 1 edit away', () => {
+        const str1 = 'tests';
+        const str2 = 'test';
+        expect(unit1.oneAway(str1, str2)).toEqual(true)
+      });
+
+      test('3. Should return true if the strings are 1 edit away', () => {
+        const str1 = 'james';
+        const str2 = 'jmes';
+        expect(unit1.oneAway(str1, str2)).toEqual(true)
+      });
+
+      test('4. Should return true if the strings are 1 edit away', () => {
+        const str1 = 'James';
+        const str2 = 'jmes';
+        expect(unit1.oneAway(str1, str2)).toEqual(true)
+      });
+
+      test('Should return false if the strings are not 1 edit away', () => {
+        const str1 = 'james';
+        const str2 = 'jmest';
+        expect(unit1.oneAway(str1, str2)).toEqual(false)
+      });
+
+      test('Should return false if the strings are not 1 edit away', () => {
+        const str1 = 'piggy';
+        const str2 = 'bacon';
+        expect(unit1.oneAway(str1, str2)).toEqual(false)
+      });
+
+      test('Should return false if the input(s) are not strings (Object)', () => {
+        const str1 = 'piggy';
+        const str2 = {word: 'piggy'};
+        expect(unit1.oneAway(str1, str2)).toEqual(false)
+      });
+
+      test('Should return false if the input(s) are not strings (Array)', () => {
+        const str1 = 'piggy';
+        const str2 = ['piggy'];
+        expect(unit1.oneAway(str1, str2)).toEqual(false)
+      });
+    });
+
   });
 });
