@@ -1,0 +1,22 @@
+{
+  "name": "cracking-the-coding-interview",
+  "version": "1.0.0",
+  "description": "🧨 My (JavaScript) solutions to CTCI practice problems",
+  "main": "Unit-1.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jameslearns/cracking-the-coding-interview.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jameslearns/cracking-the-coding-interview/issues"
+  },
+  "homepage": "https://github.com/jameslearns/cracking-the-coding-interview#readme",
+  "dependencies": {
+    "jest": "^24.3.1"
+  }
+}
