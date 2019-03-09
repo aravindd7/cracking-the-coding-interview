@@ -116,14 +116,16 @@ const Unit1 = {
     return spareChar < 2 ? true : false;
   },
   
-  // 1.6 - Rotate Matrix
-  // Given an 2D Matrix, write a method to rotate it 90°
-  // I: NxN matrix
-  // O: NxN matrix rotated 90°
-  // C: O(1) space
-  // E: 1x1 matrix, empty matrix, non-matrix input
+  // 1.6 - String Compression
+  // Given a string, write a method that implements basic string compression using
+  // the counts of repeated characters
+  // I: String (i.e. 'aabbbcddddd')
+  // O: Compressed string, or string if shorter (i.e. 'a2b3c1d5')
+  // C: None
+  // E: Empty string, non-string input, no input
 
   stringCompression: (str) => {
+    if (!str || !str.length || typeof str !== 'string') return undefined;
     let counter = 0;
     let compressed = ''
   
@@ -138,7 +140,7 @@ const Unit1 = {
   },
 
 
-  // 1.6 - Rotate Matrix
+  // 1.7 - Rotate Matrix
   // Given an 2D Matrix, write a method to rotate it 90°
   // I: NxN matrix
   // O: NxN matrix rotated 90°
@@ -167,7 +169,7 @@ const Unit1 = {
     return m;
   },
 
-  // 1.7 - Zero Matrix
+  // 1.8 - Zero Matrix
   // Given an NxM Matrix, write a method where if a zero is found, that row & col
   // will be turned into all zeros.
   // I: NxM matrix
@@ -210,6 +212,41 @@ const Unit1 = {
     return m;
   },
 
+  // 1.9 - String Rotation
+  // Assume you have a method, isSubstring, which can check if one work is a substring
+  // of another. Given 2 strings, write a method to check if s2 is a rotation of s1 using
+  // only one call to isSubstring
+  // I: String (i.e. 'waterbottle', 'erbottlewat')
+  // O: Boolean
+  // C: Only call to helper function 1x
+  // E: Empty strings, 1 string, non-string inputs 
+  
+  stringRotation: (s1, s2) => {
+    let s1copy = s1;
+    let s2copy = s2;
+    let part1 = [];
+    let part2;
+    let idx = s2copy.length - 1;
+
+    while (idx > -1) {
+      if (s1copy === s2copy) {
+        part2 = s2copy;
+        break;
+      } else {
+        let letterToRemove = s2copy[idx];
+        part1.unshift(letterToRemove);
+        s1copy = s1copy.replace(letterToRemove, '');
+        s2copy = s2copy.slice(0, idx);
+        idx--;
+      }
+    }
+
+    part1 = part1.join('');
+    let s1Vaidate = s1 === `${part1}${part2}`;
+    let s2Vaidate = s2 === `${part2}${part1}`;
+    
+    return s1Vaidate && s2Vaidate ? true : false;
+  },
 }
 
 module.exports = Unit1;

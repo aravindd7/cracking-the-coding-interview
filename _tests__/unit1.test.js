@@ -188,6 +188,18 @@ describe('Toy Problem Tests', () => {
         const output = 'abbcccdd';
         expect(unit1.stringCompression(input)).toEqual(output);
       });
+
+      test('Should return the undefined if input is invalid (empty)', () => {
+        const input = '';
+        const output = undefined;
+        expect(unit1.stringCompression(input)).toEqual(output);
+      });
+
+      test('Should return the undefined if input is invalid (Array)', () => {
+        const input = ['aabbbbccd'];
+        const output = undefined;
+        expect(unit1.stringCompression(input)).toEqual(output);
+      });
     });
 
     describe('1.7 - Rotate Matrix', () => {
@@ -248,6 +260,19 @@ describe('Toy Problem Tests', () => {
         const inputMatrix = null;
         const outputMatrix = undefined;
         expect(unit1.zeroMatrix(inputMatrix)).toEqual(outputMatrix);
+      });
+    });
+
+    describe('1.9 - String Rotation', () => {
+      test('Should return true if string 1 is a rotation of string 2', () => {
+        const s1 = 'waterbottle';
+        const s2 = 'erbottlewat';
+        expect(unit1.stringRotation(s1, s2)).toEqual(true);
+      });
+      test('Should return false if string 1 isn\'t a rotation of string 2', () => {
+        const s1 = 'waterbottl';
+        const s2 = 'erbottlewat';
+        expect(unit1.stringRotation(s1, s2)).toEqual(false);
       });
     });
   });
