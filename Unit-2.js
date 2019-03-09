@@ -111,6 +111,44 @@ const Unit2 = {
     };
   },
 
+  // 2.5 - Sum Lists 
+  // Given 2 lists that represent a number where each digit is it's own node, 
+  // write a method that adds the two numbers and returns the number as a new
+  // Linked List
+  // I: 2 linked lists of single-digit integers
+  // O: New linked list where it's nodes are the digits of the sum of the inputs
+  // C: - 
+  // E: un-even digit 
+  sumLists: (list1, list2) => {
+    let p1 = list1.head;
+    let p2 = list2.head;
+    let leftover = 0;
+    let sum, digitToAdd;
+    const listOfSum = new LinkedList();
+    
+    while (p1 && p2) {
+      sum = p1.value + p2.value;
+      leftover = Math.floor(sum / 10);
+      digitToAdd = sum + leftover % 10;
+      listOfSum.insert(digitToAdd);
+      p1 = p1.next;
+      p2 = p2.next;
+    };
+
+    while (p1 || p2) {
+      if (p1) {
+        listOfSum.insert(p1.val);
+        p1 = p1.next;
+      } else if (p2) {
+        listOfSum.insert(p2.val);
+        p2 = p2.next;
+      }
+    };
+
+    return listOfSum;
+  },
+
+  
 
 };
 
