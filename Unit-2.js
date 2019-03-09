@@ -77,8 +77,30 @@ const Unit2 = {
       let next = curr.next;
       curr.value = next.value;
       curr.next = next.next;
-    }
+    };
 
+    // 2.4 - Partition Array
+    // I: Array
+    // O: Partitioned Array
+    // C:
+    // E: k out of range
+    partitionList(target) {
+      let previous = this.head;
+      let current = this.head.next;
+      let next = current.next;
+
+      if (current.value < target) {
+        previous.next = next;
+        current.next = this.head;
+        this.head = current;
+        current = next;
+        next = current.next;
+      } else {
+        previous = current;
+        current = next; 
+        next = current.next;
+      };
+    };
 
   },
 
