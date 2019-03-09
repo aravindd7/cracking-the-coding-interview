@@ -187,5 +187,48 @@ describe('Toy Problem Tests', () => {
       });
     });
 
+    describe('1.8 - Zero Matrix', () => {
+      test('1. Should convert rows/cols to zeros if found', () => {
+        const inputMatrix = [[1,4,3,7], [1,0,3,7], [1,4,3,0]]
+        const outputMatrix = [[1,0,3,0], [0,0,0,0], [0,0,0,0]]
+        expect(unit1.zeroMatrix(inputMatrix)).toEqual(outputMatrix);
+      });
+
+      test('2. Should convert rows/cols to zeros if found', () => {
+        const inputMatrix = [[1,4,3,0]]
+        const outputMatrix = [[0,0,0,0]]
+        expect(unit1.zeroMatrix(inputMatrix)).toEqual(outputMatrix);
+      });
+
+      test('3. Should convert rows/cols to zeros if found', () => {
+        const inputMatrix = [];
+        const outputMatrix = [];
+        expect(unit1.zeroMatrix(inputMatrix)).toEqual(outputMatrix);
+      });
+
+      test('4. Should convert rows/cols to zeros if found', () => {
+        const inputMatrix = [[2, 3], [4, 0]];
+        const outputMatrix = [[2,0], [0,0]];
+        expect(unit1.zeroMatrix(inputMatrix)).toEqual(outputMatrix);
+      });
+
+      test('5. Should convert rows/cols to zeros if found', () => {
+        const inputMatrix = [[],[]];
+        const outputMatrix = [[],[]];
+        expect(unit1.zeroMatrix(inputMatrix)).toEqual(outputMatrix);
+      });
+
+      test('Should return null if input is not an array (String)', () => {
+        const inputMatrix = 'string';
+        const outputMatrix = undefined;
+        expect(unit1.zeroMatrix(inputMatrix)).toEqual(outputMatrix);
+      });
+
+      test('Should return null if input is not an array (null)', () => {
+        const inputMatrix = null;
+        const outputMatrix = undefined;
+        expect(unit1.zeroMatrix(inputMatrix)).toEqual(outputMatrix);
+      });
+    });
   });
 });

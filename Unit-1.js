@@ -145,6 +145,49 @@ const Unit1 = {
     return m;
   },
 
+  // 1.7 - Zero Matrix
+  // Given an NxM Matrix, write a method where if a zero is found, that row & col
+  // will be turned into all zeros.
+  // I: NxM matrix
+  // O: NxM matrix 
+  // C: n/a
+  // E: 1x1 matrix, empty matrix, non-matrix input
+  zeroMatrix: (m) => {
+    if (!Array.isArray(m) || !m) return undefined;
+    const rowWithZeroes = [];
+    const colWithZeroes = [];
+
+    const zeroTheRow = (r, m) => {
+      for (let c = 0; c < m[r].length; c++) {
+        m[r][c] = 0;
+      };
+    };
+
+    const zeroTheCol = (c, m) => {
+      for (let r = 0; r < m.length; r++) {
+        m[r][c] = 0;
+      };
+    };
+
+    for (let r = 0; r < m.length; r++) {
+      for (let c = 0; c < m[r].length; c++) {
+        if (m[r][c] === 0) {
+          if (!rowWithZeroes.includes(r)) {
+            rowWithZeroes.push(r);
+          }
+          if (!colWithZeroes.includes(c)) {
+            colWithZeroes.push(c);
+          }
+        } 
+      }
+    }
+
+    rowWithZeroes.forEach(row => zeroTheRow(row, m));
+    colWithZeroes.forEach(col => zeroTheCol(col, m));
+
+    return m;
+  },
+
 }
 
 module.exports = Unit1;
