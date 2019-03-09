@@ -115,6 +115,28 @@ const Unit1 = {
     let spareChar = Object.values(freqCounter).reduce((acc, val) => acc += val, 0);
     return spareChar < 2 ? true : false;
   },
+  
+  // 1.6 - Rotate Matrix
+  // Given an 2D Matrix, write a method to rotate it 90°
+  // I: NxN matrix
+  // O: NxN matrix rotated 90°
+  // C: O(1) space
+  // E: 1x1 matrix, empty matrix, non-matrix input
+
+  stringCompression: (str) => {
+    let counter = 0;
+    let compressed = ''
+  
+    for (let i = 0; i < str.length; i++) {
+      counter++;
+      if (str[i] !== str[i + 1]) {
+        compressed += str[i] + counter;
+        counter = 0;
+      }
+    };
+    return compressed.length < str.length ? compressed : str;
+  },
+
 
   // 1.6 - Rotate Matrix
   // Given an 2D Matrix, write a method to rotate it 90°

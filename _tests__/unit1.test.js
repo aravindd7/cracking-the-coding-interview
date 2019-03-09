@@ -170,6 +170,26 @@ describe('Toy Problem Tests', () => {
       });
     });
 
+    describe('1.6 - String Compression', () => {
+      test('Should return a compressed string', () => {
+        const input = 'aaabcccccaaaa';
+        const output = 'a3b1c5a4'
+        expect(unit1.stringCompression(input)).toEqual(output);
+      });
+
+      test('Should return the original string if equal to compressed output', () => {
+        const input = 'aabbccdd';
+        const output = 'aabbccdd';
+        expect(unit1.stringCompression(input)).toEqual(output);
+      });
+
+      test('Should return the original string if shorter than compressed output', () => {
+        const input = 'abbcccdd';
+        const output = 'abbcccdd';
+        expect(unit1.stringCompression(input)).toEqual(output);
+      });
+    });
+
     describe('1.7 - Rotate Matrix', () => {
       test('Should rotate a 4x4 Matrix', () => {
         const inputMatrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]];
