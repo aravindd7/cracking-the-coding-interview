@@ -65,8 +65,19 @@ const Unit2 = {
           currIndex++;
         }
       };
+    };
+
+    // 2.3 - Delete Middle
+    // I: Node
+    // O: None
+    // C:
+    // E: k out of range
+    deleteMiddle(node) {
+      let curr = node;
+      let next = curr.next;
+      curr.value = next.value;
+      curr.next = next.next;
     }
-    
 
 
   },
