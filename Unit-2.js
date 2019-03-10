@@ -125,7 +125,7 @@ const Unit2 = {
     let leftover = 0;
     let sum, digitToAdd;
     const listOfSum = new LinkedList();
-    
+
     while (p1 && p2) {
       sum = p1.value + p2.value;
       leftover = Math.floor(sum / 10);
@@ -144,9 +144,40 @@ const Unit2 = {
         p2 = p2.next;
       }
     };
-
     return listOfSum;
   },
+
+  // 2.6 - isPalindrome 
+  // Given a linked list, write code that determines if a linked list is a
+  // Palindrome
+  // I: Linked List
+  // O: New linked list where it's nodes are the digits of the sum of the inputs
+  // O: Boolean
+  // C: - 
+  // E: Empty string, non string
+
+  isPalindrome: (list) => {
+    let wordInList = '';
+    let current = list.head;
+    
+    while (current) {
+      wordInList += current.value;
+      current = current.next;
+    };
+    
+    let start = 0;
+    let end = wordInList.length - 1;
+
+    while (start !== end) {
+      if (wordInList[start] !== wordInList[end]) {
+        return false;
+      }
+      start++;
+      end--;
+    };
+    return true;
+  },
+
 
   
 
