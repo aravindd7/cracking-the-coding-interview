@@ -6,6 +6,8 @@
   - [Solutions](https://github.com/jameslearns/cracking-the-coding-interview/blob/master/Unit-1.js)
   - [Tests](https://github.com/jameslearns/cracking-the-coding-interview/blob/master/_tests__/unit1.test.js)
 - Unit 2 - Linked Lists
+  - [Solutions](https://github.com/jameslearns/cracking-the-coding-interview/blob/master/Unit-2.js)
+  - [Tests](https://github.com/jameslearns/cracking-the-coding-interview/blob/master/_tests__/unit2.test.js)
 - Unit 3 - Stacks & Queues
 - Unit 4 - Trees & Graphs
 - Unit 5 - Bit Manipulation
